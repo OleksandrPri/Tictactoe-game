@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_work.MainPage" 
+             BackgroundColor="Black"
+             BackgroundImageSource="background.jpg">
+
+    <ScrollView HorizontalOptions="Fill">
+        <HorizontalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <Grid RowDefinitions="auto, auto, auto, auto, auto, auto, auto, auto"
+             ColumnDefinitions="auto, auto, auto"
+             ColumnSpacing="5"
+             RowSpacing="5"
+             Margin="0, 10, 0, 0">
+
+                <Picker
+                    x:Name="pickerPlayerType"
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    BackgroundColor="#5cb8b3"
+                    WidthRequest="128"
+                    SelectedIndexChanged="PickerSelectedIndexChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Tietokone</x:String>
+                            <x:String>Ihminen</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Border
+                    x:Name="borderPlayer1"
+                    Stroke="#5cb8b3"
+                    StrokeThickness="1"
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    WidthRequest="128"
+                    HorizontalOptions="Start">
+                    <ImageButton
+                        x:Name="picturePlayer1"
+                        Source="choose.png"
+                        Clicked="OnFirstPlayerClicked"
+                        BackgroundColor="Transparent"
+                        ToolTipProperties.Text="Valita pelaajaa"/>
+                </Border>
+
+                <Image
+                    Source="vs.png"
+                    Margin="30,0,30,0"
+                    Grid.Column="1"
+                    HeightRequest="50"
+                    Grid.Row="1"
+                    HorizontalOptions="Start"/>
+
+                <Border
+                    x:Name="borderPlayer2"
+                    Stroke="#5cb8b3"
+                    StrokeThickness="1"
+                    Grid.Column="2"
+                    Grid.Row="1"
+                    WidthRequest="128">
+                    <ImageButton
+                        x:Name="picturePlayer2"
+                        Clicked="OnSecondPlayerClicked"
+                        BackgroundColor="Transparent"
+                        Source="computer.jpg"/>
+                </Border>
+
+                <Label
+                        x:Name="labelPlayer1Name"
+                        Text=""
+                        FontSize="12"
+                        TextColor="#5cb8b3"
+                        Grid.Column="0"
+                        Grid.Row="2"/>
+
+                <Label
+                        x:Name="labelPlayer2Name"
+                        Text=""
+                        FontSize="12"
+                        TextColor="#5cb8b3"
+                        Grid.Column="2"
+                        Grid.Row="2"/>
+
+                <Button
+                    x:Name="buttonNewGame"
+                    Text="uusi peli"
+                    Clicked="OnNewGameClicked"
+                    TextTransform="Uppercase"
+                    TextColor="#5cb8b3"
+                    ImageSource="gmbutton.png"
+                    HorizontalOptions="Start"
+                    Padding="0"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"                   
+                    Grid.ColumnSpan="3"
+                    Grid.Row="3" />
+
+                <BoxView   
+                      Color="#5cb8b3"  
+                      Margin="2,0,0,5"
+                      HeightRequest="2"  
+                      HorizontalOptions="Fill"
+                      VerticalOptions="End"
+                      Grid.ColumnSpan="3"
+                      Grid.Row="3"/>
+
+                <Button
+                    x:Name="buttonCreateAccount"
+                    Text="luoda tili"
+                    Clicked="OnCreateAccountClicked"
+                    TextTransform="Uppercase"
+                    TextColor="#5cb8b3"
+                    ImageSource="gmbutton.png"
+                    HorizontalOptions="Start"
+                    Padding="0"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"                   
+                    Grid.ColumnSpan="3"
+                    Grid.Row="4" />
+
+                <BoxView   
+                    Color="#5cb8b3"  
+                    Margin="2,0,0,5"
+                    HeightRequest="2"  
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="4"/>
+
+                <Button
+                    x:Name="buttonInstructions"
+                    Text="ohjeet"
+                    Clicked="OnInstructionsClicked"
+                    TextTransform="Uppercase"
+                    TextColor="#5cb8b3"
+                    ImageSource="gmbutton.png"
+                    HorizontalOptions="Start"
+                    Padding="0"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    BackgroundColor="Transparent"                   
+                    Grid.ColumnSpan="3"
+                    Grid.Row="6"/>
+
+                <BoxView   
+                    Color="#5cb8b3"  
+                    Margin="2,0,0,5"
+                    HeightRequest="2"  
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="6"/>
+
+                <Button
+                    x:Name="buttonExit"
+                    Text="poistu"
+                    Clicked="OnExitClicked"
+                    TextTransform="Uppercase"
+                    TextColor="#5cb8b3"
+                    ImageSource="gmbutton.png"
+                    HorizontalOptions="Start"
+                    Padding="0"
+                    FontSize="18"
+                    BackgroundColor="Transparent"
+                    FontAttributes="Bold"                  
+                    Grid.ColumnSpan="3"
+                    Grid.Row="7"/>
+
+                <BoxView   
+                    Color="#5cb8b3"  
+                    Margin="2,0,0,5"
+                    HeightRequest="2"  
+                    HorizontalOptions="Fill"
+                    VerticalOptions="End"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="7"/>
+
+            </Grid>
+            <Border
+                Stroke="#5cb8b3"
+                BackgroundColor="#7F000000"
+                StrokeThickness="1"
+                WidthRequest="420"
+                Padding="0,15,0,15"
+                HorizontalOptions="Start">
+
+                <Grid
+                    RowDefinitions="auto, auto, auto"
+                    ColumnDefinitions="auto, auto, auto, auto, auto, auto"
+                    Padding="0"
+                    HorizontalOptions="Center">
+
+                    <Image Source="table.png" 
+                           WidthRequest="385"
+                           Grid.ColumnSpan="6"
+                           Grid.Row="0"/>
+
+                    <Image
+                        Source="winn.png"
+                        WidthRequest="20"
+                        Margin="145,5,0,0"
+                        Grid.Column="2"
+                        Grid.Row="1"/>
+
+                    <Image
+                        Source="loss.png"
+                        WidthRequest="20"
+                        Margin="0,5,0,0"
+                        Grid.Column="3"
+                        Grid.Row="1"/>
+
+                    <Image
+                        Source="same.png"
+                        WidthRequest="20"
+                        Margin="0,5,0,0"
+                        Grid.Column="4"
+                        Grid.Row="1"/>
+
+                    <Image
+                        Source="time.png"
+                        WidthRequest="20"
+                        Margin="0,5,5,0"
+                        Grid.Column="5"
+                        Grid.Row="1"/>
+
+                    <BoxView   
+                        Color="#5cb8b3"  
+                        Margin="0,5,0,0"
+                        HeightRequest="25"  
+                        HorizontalOptions="Fill"
+                        WidthRequest="385"
+                        VerticalOptions="Center"
+                        Grid.ColumnSpan="6"
+                        Grid.Row="1"
+                        ZIndex="-1"/>
+
+                    <ListView
+                        HorizontalOptions="FillAndExpand"
+                        x:Name="listPelaajat"
+                        VerticalScrollBarVisibility="Always"
+                        ItemsSource="{Binding User}"
+                        WidthRequest="400"
+                        HeightRequest="350"
+                        ItemSelected="OnItemSelectedChanged"
+                        Grid.ColumnSpan="6"
+                        Grid.Row="2">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate >
+                                <ViewCell>
+                                    <ViewCell.View>
+                                        <Grid 
+                                            BackgroundColor="#5cb8b3" 
+                                            Margin="10,10,10,10"
+                                            MinimumHeightRequest="60"
+                                            RowDefinitions="auto, auto"
+                                            ColumnDefinitions="100, 90, 45, 45, 45, 60">
+
+                                            <Label Text="{Binding firstName}" Grid.Column="0" Grid.Row="0" Margin="10,5,1,5" FontAttributes="Bold"/>
+                                            <Label Text="{Binding secondName}" Grid.Column="1" Grid.Row="0" Margin="1,5,10,5" HorizontalOptions="Start" FontAttributes="Bold"/>
+                                            <Label Text="{Binding birthDay}" Grid.Column="0" Grid.Row="1" Margin="10,5,10,5"/>
+                                            <Label Text="{Binding countWin}" Grid.Column="2" Grid.Row="0" Margin="10,5,10,5"  HorizontalOptions="End"/>
+                                            <Label Text="{Binding countLoss}" Grid.Column="3" Grid.Row="0" Margin="10,5,10,5" HorizontalOptions="End"/>
+                                            <Label Text="{Binding countDraw}" Grid.Column="4" Grid.Row="0" Margin="10,5,10,5" HorizontalOptions="End"/>
+                                            <Label Text="{Binding countTime}" Grid.Column="5" Grid.Row="0" Margin="10,5,10,5" HorizontalOptions="End"/>
+                                            
+                                        </Grid>
+                                    </ViewCell.View>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                </Grid>
+            </Border>
+
+        </HorizontalStackLayout>
+    </ScrollView>
+
+</ContentPage>

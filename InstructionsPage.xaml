@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_work.InstructionsPage" 
+             BackgroundColor="Black">
+
+    <ScrollView VerticalOptions="Center"
+                HorizontalOptions="Center">
+
+        <Grid
+            RowDefinitions="auto, auto, auto, auto, auto, auto"
+             ColumnDefinitions="40, 300, 40, auto"
+            HorizontalOptions="Center"
+             ColumnSpacing="5"
+             RowSpacing="5"
+             Margin="0, 20, 0, 20">
+
+            <Border
+                BackgroundColor="#5cb8b3"
+                StrokeThickness="0"
+                WidthRequest="30"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Grid.Column="0"
+                Grid.Row="0">
+
+                <Label
+                    Text="1"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+
+            </Border>
+
+            <Label
+                Text="Tämä kuva osoittaa, että pelaaja ei ole valittu."
+                VerticalOptions="Center"
+                TextColor="#5cb8b3"
+                Grid.Column="1"
+                Grid.Row="0"/>
+
+            <Border
+                BackgroundColor="#5cb8b3"
+                StrokeThickness="0"
+                WidthRequest="30"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Grid.Column="2"
+                Grid.Row="0">
+
+                <Image
+                Source="winn.png"
+                WidthRequest="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+            </Border>
+
+            <Label
+                Text="Voitot"
+                VerticalOptions="Center"
+                TextColor="#5cb8b3"
+                Grid.Column="3"
+                Grid.Row="0"/>
+
+            <Border
+                BackgroundColor="#5cb8b3"
+                StrokeThickness="0"
+                WidthRequest="30"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Grid.Column="0"
+                Grid.Row="1">
+
+                <Label
+                Text="2"
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+            </Border>
+
+            <Label
+                Text="Paksumpi kehys tarkoittaa, että taulukosta valittu pelaaja sijoitetaan tähän soluun."
+                VerticalOptions="Center"
+                TextColor="#5cb8b3"
+                Grid.Column="1"
+                Grid.Row="1"/>
+
+            <Border
+                BackgroundColor="#5cb8b3"
+                StrokeThickness="0"
+                WidthRequest="30"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Grid.Column="2"
+                Grid.Row="1">
+
+                <Image
+                Source="loss.png"
+                WidthRequest="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+            </Border>
+
+            <Label
+                Text="Tappiot"
+                VerticalOptions="Center"
+                TextColor="#5cb8b3"
+                Grid.Column="3"
+                Grid.Row="1"/>
+
+            <Border
+                BackgroundColor="#5cb8b3"
+                StrokeThickness="0"
+                WidthRequest="30"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Grid.Column="0"
+                Grid.Row="2">
+
+                <Label
+                Text="3"
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+            </Border>
+
+            <Label
+                Text="Napsauttamalla tätä - tämä pelaaja sijoitetaan soluun."
+                VerticalOptions="Center"
+                TextColor="#5cb8b3"
+                Grid.Column="1"
+                Grid.Row="2"/>
+
+            <Border
+                BackgroundColor="#5cb8b3"
+                StrokeThickness="0"
+                WidthRequest="30"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Grid.Column="2"
+                Grid.Row="2">
+
+                <Image
+                Source="same.png"
+                WidthRequest="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+            </Border>
+
+            <Label
+                Text="Tasapelit"
+                VerticalOptions="Center"
+                TextColor="#5cb8b3"
+                Grid.Column="3"
+                Grid.Row="2"/>
+
+            <Border
+                BackgroundColor="#5cb8b3"
+                StrokeThickness="0"
+                WidthRequest="30"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Grid.Column="0"
+                Grid.Row="3">
+
+                <Label
+                Text="4"
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+            </Border>
+
+            <Label
+                Text="Täällä voit valita vastustajaksi tietokoneen tai henkilön."
+                VerticalOptions="Center"
+                TextColor="#5cb8b3"
+                Grid.Column="1"
+                Grid.Row="3"/>
+
+            <Border
+                BackgroundColor="#5cb8b3"
+                StrokeThickness="0"
+                WidthRequest="30"
+                HeightRequest="30"
+                StrokeShape="RoundRectangle 20,20,20,20"
+                Grid.Column="2"
+                Grid.Row="3">
+
+                <Image
+                Source="time.png"
+                WidthRequest="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+            </Border>
+
+            <Label
+                Text="Pelattujen pelien yhteiskesto"
+                VerticalOptions="Center"
+                TextColor="#5cb8b3"
+                Grid.Column="3"
+                Grid.Row="3"/>
+
+            <Image
+                Source="instructions.png"
+                WidthRequest="660"
+                Grid.ColumnSpan="4"
+                Grid.Row="4"/>
+
+            <Button
+            x:Name="buttonBack"
+            Text="Takaisin"
+            Clicked="OnBackClicked"
+            TextTransform="Uppercase"
+            TextColor="#5cb8b3"
+            ImageSource="gmbutton.png"
+            HorizontalOptions="Start"
+            Margin="210,20,0,0"
+            Padding="0"
+            FontSize="18"
+            BackgroundColor="Transparent"
+            FontAttributes="Bold"
+            Grid.ColumnSpan="4"
+            Grid.Row="5"/>
+
+            <BoxView   
+            Color="#5cb8b3"  
+            Margin="0,0,0,5"
+            HeightRequest="2"
+            WidthRequest="235"
+            HorizontalOptions="Center"
+            VerticalOptions="End"
+            Grid.ColumnSpan="4"
+            Grid.Row="5"/>
+
+          </Grid>
+
+    </ScrollView>
+
+</ContentPage>

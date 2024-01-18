@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_work.GamePage" 
+             BackgroundColor="Black">
+
+    <ScrollView VerticalOptions="Center">
+
+        <Grid RowDefinitions="auto, auto, auto, auto, auto, auto"
+              ColumnDefinitions="auto, auto, auto, auto, auto"
+              ColumnSpacing="5"
+              RowSpacing="5"
+              HorizontalOptions="Center">
+
+            <Border
+                Stroke="#5cb8b3"
+                StrokeThickness="1"
+                Grid.Column="0"
+                Grid.Row="0"
+                WidthRequest="70">
+                <Image
+                    x:Name="picturePlayer1"
+                    Source="player1.jpg"/>
+            </Border>
+
+            <ImageButton
+                    x:Name="player1Symbol"
+                    Source="tik.png"
+                    BackgroundColor="Transparent"
+                    WidthRequest="70"
+                    Grid.Column="1"
+                    Grid.Row="0"/>
+
+            <Label
+                    x:Name="gameTime"
+                    Text="00:00"
+                    FontSize="32"
+                    TextColor="#5cb8b3"
+                    Margin="100,0,100,0"
+                    Grid.Column="2"
+                    Grid.Row="0"/>
+
+            <ImageButton
+                    x:Name="player2Symbol"
+                    Source="tak.png"
+                    BackgroundColor="Transparent"
+                    WidthRequest="70"
+                    Grid.Column="3"
+                    Grid.Row="0"/>
+
+            <Border
+                Stroke="#5cb8b3"
+                StrokeThickness="1"
+                Grid.Column="4"
+                Grid.Row="0"
+                WidthRequest="70">
+                <Image
+                    x:Name="picturePlayer2"
+                    Source="player2.jpg"/>
+            </Border>
+
+            <Label
+                x:Name="labelPlayer1Name"
+                Text="Player 1"
+                FontSize="25"
+                TextColor="#5cb8b3"
+                Margin="0,0,0,0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.Row="1"/>
+
+            <Label
+                x:Name="labelPlayer2Name"
+                Text="Player 2"
+                FontSize="25"
+                TextColor="#5cb8b3"
+                Margin="0,0,0,0"
+                HorizontalOptions="End"
+                Grid.Column="3"
+                Grid.ColumnSpan="3"
+                Grid.Row="1"/>
+
+            <Label
+                x:Name="labelWinner"
+                Text=""
+                TextColor="#5cb8b3"
+                HorizontalOptions="Center"
+                Grid.Column="2"
+                Grid.Row="2"/>
+
+            <Grid 
+                RowDefinitions="auto, auto, auto"
+                ColumnDefinitions="auto, auto, auto"
+                ColumnSpacing="5"
+                RowSpacing="5"
+                HorizontalOptions="Center"
+                Margin="0,0,0,70"
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="5"
+                Grid.Row="3">
+
+                <ImageButton
+                    x:Name="cell1"
+                    Clicked="OnCell1Clicked"
+                    BackgroundColor="#4C5CB8B3"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Grid.Column="0"
+                    Grid.Row="0"/>
+
+                <ImageButton
+                    x:Name="cell2"
+                    Clicked="OnCell2Clicked"
+                    BackgroundColor="#4C5CB8B3"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Grid.Column="1"
+                    Grid.Row="0"/>
+
+                <ImageButton
+                    x:Name="cell3"
+                    Clicked="OnCell3Clicked"
+                    BackgroundColor="#4C5CB8B3"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Grid.Column="2"
+                    Grid.Row="0"/>
+
+                <ImageButton
+                    x:Name="cell4"
+                    Clicked="OnCell4Clicked"
+                    BackgroundColor="#4C5CB8B3"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Grid.Column="0"
+                    Grid.Row="1"/>
+
+                <ImageButton
+                    x:Name="cell5"
+                    Clicked="OnCell5Clicked"
+                    BackgroundColor="#4C5CB8B3"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Grid.Column="1"
+                    Grid.Row="1"/>
+
+                <ImageButton
+                    x:Name="cell6"
+                    Clicked="OnCell6Clicked"
+                    BackgroundColor="#4C5CB8B3"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Grid.Column="2"
+                    Grid.Row="1"/>
+
+                <ImageButton
+                    x:Name="cell7"
+                    Clicked="OnCell7Clicked"
+                    BackgroundColor="#4C5CB8B3"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Grid.Column="0"
+                    Grid.Row="2"/>
+
+                <ImageButton
+                    x:Name="cell8"
+                    Clicked="OnCell8Clicked"
+                    BackgroundColor="#4C5CB8B3"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Grid.Column="1"
+                    Grid.Row="2"/>
+
+                <ImageButton
+                    x:Name="cell9"
+                    Clicked="OnCell9Clicked"
+                    BackgroundColor="#4C5CB8B3"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Grid.Column="2"
+                    Grid.Row="2"/>
+
+            </Grid>
+
+            <Button
+                x:Name="buttonBack"
+                Text="Takaisin"
+                Clicked="OnBackClicked"
+                TextTransform="Uppercase"
+                TextColor="#5cb8b3"
+                ImageSource="gmbutton.png"
+                HorizontalOptions="Center"
+                Margin="54,250,0,0"
+                Padding="0"
+                FontSize="18"
+                BackgroundColor="Transparent"
+                FontAttributes="Bold"
+                Grid.ColumnSpan="3"
+                Grid.Row="4"/>
+
+            <BoxView   
+                Color="#5cb8b3"  
+                Margin="160,0,0,5"
+                HeightRequest="2"  
+                WidthRequest="240"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Grid.ColumnSpan="3"
+                Grid.Row="4"/>
+
+            <Button
+                x:Name="buttonPlayAgain"
+                Text="Pelata uudelleen"
+                Clicked="OnPlayAgainClicked"
+                TextTransform="Uppercase"
+                TextColor="#5cb8b3"
+                ImageSource="gmbutton.png"
+                HorizontalOptions="Center"
+                Margin="150,0,0,0"
+                Padding="0"
+                FontSize="18"
+                BackgroundColor="Transparent"
+                FontAttributes="Bold" 
+                Grid.ColumnSpan="3"
+                Grid.Row="5"/>
+
+            <BoxView   
+                Color="#5cb8b3"  
+                Margin="156,0,0,5"
+                HeightRequest="2"  
+                WidthRequest="250"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Grid.ColumnSpan="3"
+                Grid.Row="5"/>
+
+
+        </Grid>
+        
+        
+
+    </ScrollView>
+
+</ContentPage>
